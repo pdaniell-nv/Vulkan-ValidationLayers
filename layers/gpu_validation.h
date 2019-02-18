@@ -27,10 +27,13 @@
 // The interface allows the caller to "get" and "put back" blocks.
 // The manager allocates and frees chunks as needed.
 
+class CoreChecks;
+typedef CoreChecks *layer_data;
+
 class GpuDeviceMemoryManager {
    public:
     GpuDeviceMemoryManager(layer_data *dev_data, uint32_t data_size) {
-        uint32_t align = static_cast<uint32_t>(GetPDProperties(dev_data)->limits.minStorageBufferOffsetAlignment);
+        uint32_t align = static_cast<uint32_t>(dev_data->GetPDProperties(dev_data)->limits.minStorageBufferOffsetAlignment);
         if (0 == align) {
             align = 1;
         }

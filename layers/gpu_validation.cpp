@@ -20,7 +20,9 @@
 // Allow use of STL min and max functions in Windows
 #define NOMINMAX
 
+#include "chassis.h"
 #include "core_validation.h"
+#include "gpu_validation.h"
 #include "shader_validation.h"
 #include "spirv-tools/libspirv.h"
 #include "spirv-tools/optimizer.hpp"

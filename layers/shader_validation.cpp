@@ -32,6 +32,7 @@
 #include "vk_layer_data.h"
 #include "vk_layer_extension_utils.h"
 #include "vk_layer_utils.h"
+#include "chassis.h"
 #include "core_validation.h"
 #include "shader_validation.h"
 #include "spirv-tools/libspirv.h"
