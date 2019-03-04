@@ -997,8 +997,8 @@ VKAPI_ATTR VkResult VKAPI_CALL MergeValidationCachesEXT(VkDevice device, VkValid
         if (src[i] == dst) {
             skip |= log_msg(dev_data->report_data, VK_DEBUG_REPORT_ERROR_BIT_EXT, VK_DEBUG_REPORT_OBJECT_TYPE_VALIDATION_CACHE_EXT,
                             0, "VUID-vkMergeValidationCachesEXT-dstCache-01536",
-                            "vkMergeValidationCachesEXT: dstCache (0x%" PRIx64 ") must not appear in pSrcCaches array.",
-                            HandleToUint64(dstCache));
+                            "vkMergeValidationCachesEXT: dstCache (%s) must not appear in pSrcCaches array.",
+                            dev_data->report_data->FormatHandle(dstCache).c_str());
             result = VK_ERROR_VALIDATION_FAILED_EXT;
         }
         if (!skip) {
